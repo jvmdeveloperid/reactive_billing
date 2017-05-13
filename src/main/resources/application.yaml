@@ -1,0 +1,44 @@
+debug: true
+
+logging:
+    level:
+        root: WARN
+        org.springframework: WARN
+        org.springframework.boot: OFF
+        org.springframework.web: WARN
+        org.springframework.security: WARN
+        org.springframework.http.client: WARN
+        org.hibernate: OFF
+        org.hibernate.SQL : OFF
+        org.elasticsearch: WARN
+        jdbc: WARN
+                #aop: DEBUG
+                #dao: DEBUG
+                #orm: DEBUG
+                #amqp: DEBUG
+                #data: DEBUG
+                #transaction: DEBUG
+        org.axonframework: INFO
+
+server:
+    port: 9000
+
+spring:
+    application:
+        name: server
+
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/reactive?autoReconnect=true&useSSL=false
+        username: root
+        password:
+        validation-query: SELECT 1;
+        test-on-borrow: true
+        validation-interval: 30000
+    jpa:
+        database: MYSQL
+        hibernate:
+            ddl-auto: update
+            naming:
+              strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        show-sql: false
